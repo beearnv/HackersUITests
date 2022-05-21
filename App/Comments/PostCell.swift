@@ -24,6 +24,7 @@ class PostCell: SwipeTableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         setupThumbnailGesture()
+        thumbnailImageView.accessibilityIdentifier = "thumbnailImage"
     }
 
     private func setupThumbnailGesture() {

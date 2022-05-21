@@ -18,7 +18,9 @@ class PostTitleView: UIView, UIGestureRecognizerDelegate {
         didSet {
             guard let post = post else { return }
             titleLabel.text = post.title
+            titleLabel.accessibilityIdentifier = "postTitleLable"
             metadataLabel.attributedText = metadataText(for: post)
+            metadataLabel.accessibilityIdentifier = "metadataLabel"
         }
     }
 

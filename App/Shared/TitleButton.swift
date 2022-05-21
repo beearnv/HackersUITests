@@ -41,6 +41,7 @@ class TitleButton: UIButton {
         attributedString.append(NSAttributedString(attachment: imageAttachment))
 
         self.setAttributedTitle(attributedString, for: .normal)
+        self.accessibilityIdentifier = "titleButton"
     }
 
     func setupMenu() {

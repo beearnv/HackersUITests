@@ -147,6 +147,7 @@ extension FeedCollectionViewController: UICollectionViewDelegate {
                     }
                 }
             }
+            cell.accessibilityIdentifier = "feedCell"
 
             return cell
         }

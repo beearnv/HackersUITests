@@ -58,8 +58,10 @@ class CommentTableViewCell: SwipeTableViewCell {
         level = comment.level
         authorLabel.text = comment.by
         authorLabel.font = AppFont.commentUsernameFont(collapsed: isCollapsed)
+        authorLabel.accessibilityIdentifier = "authorLabel"
         datePostedLabel.text = comment.age
         datePostedLabel.font = AppFont.commentDateFont(collapsed: isCollapsed)
+        datePostedLabel.accessibilityIdentifier = "datePostedLabel"
         upvoteIconImageView?.isHidden = comment.upvoted == false
 
         if let isPostAuthor = isPostAuthor {
@@ -81,6 +83,7 @@ class CommentTableViewCell: SwipeTableViewCell {
                                                  range: commentRange)
 
             commentTextView.attributedText = commentAttributedString
+            commentTextView.accessibilityIdentifier = "commentText"
         }
     }
 

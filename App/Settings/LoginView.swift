@@ -27,20 +27,24 @@ struct LoginView: View {
                 Text("Login to Hacker News")
                     .font(.largeTitle)
                     .padding(.bottom, 30)
+                    .accessibilityIdentifier("loginTitle")
 
                 TextField("Username", text: $username)
                     .autocapitalization(.none)
                     .disableAutocorrection(true)
                     .textFieldStyle(RoundedTextField())
                     .textContentType(.username)
+                    .accessibilityIdentifier("usernameField")
 
                 SecureField("Password", text: $password)
                     .textFieldStyle(RoundedTextField())
                     .textContentType(.password)
+                    .accessibilityIdentifier("passwordField")
 
                 Text("Hackers never stores your password")
                     .foregroundColor(Color.secondary)
                     .font(.footnote)
+                    .accessibilityIdentifier("trustTitle")
 
                 Button("Login") {
                     isAuthenticating = true
@@ -63,6 +67,7 @@ struct LoginView: View {
                             message: Text("Error logging into Hacker News, check your username and password.")
                         )
                     }
+                    .accessibilityIdentifier("loginButton")
 
                 LabelledDivider(label: "or")
 
@@ -72,6 +77,7 @@ struct LoginView: View {
                         Image(systemName: "rectangle.portrait.and.arrow.right")
                     }
                     .padding()
+                    .accessibilityIdentifier("registerButton")
                 }
             }
             .toolbar {
@@ -82,6 +88,7 @@ struct LoginView: View {
                         Text("Done")
                             .bold()
                     }
+                    .accessibilityIdentifier("doneButton")
                 }
             }
         }

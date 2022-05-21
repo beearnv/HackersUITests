@@ -373,6 +373,7 @@
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Hackers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zsb-oN-k0j">
                                                                     <rect key="frame" x="0.0" y="0.0" width="220" height="52.5"/>
+                                                                    <accessibility key="accessibilityConfiguration" identifier="settingsTitle"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -407,6 +408,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Hackers on GitHub" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qQX-ZY-Ize">
                                                     <rect key="frame" x="16" y="0.0" width="294.5" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="HackersOnGitLabel"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -425,6 +427,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Send Feedback" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mol-08-1sm">
                                                     <rect key="frame" x="16" y="0.0" width="294.5" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="sendFeedbackLabel"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -443,6 +446,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="What's New" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mop-dp-piY">
                                                     <rect key="frame" x="16" y="0.0" width="294.5" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="whatsNewLabel"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -493,12 +497,14 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Thumbnails" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65F-Rn-FAZ">
                                                     <rect key="frame" x="16" y="13.5" width="114" height="17"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="showThumbnailsLabel"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5xy-Xy-ER7">
                                                     <rect key="frame" x="279" y="6.5" width="51" height="31"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="showThumbnailsSwitch"/>
                                                     <connections>
                                                         <action selector="showThumbnailsValueChanged:" destination="uZL-eS-tCe" eventType="valueChanged" id="SS4-qZ-CQK"/>
                                                     </connections>
@@ -525,12 +531,14 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe Actions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXF-rP-Tah">
                                                     <rect key="frame" x="16" y="13.5" width="91.5" height="17"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="swipeActionsLabel"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VQH-5Z-1Ir">
                                                     <rect key="frame" x="279" y="6.5" width="51" height="31"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="swipeActionsSwitch"/>
                                                     <connections>
                                                         <action selector="swipeActionsValueChanged:" destination="uZL-eS-tCe" eventType="valueChanged" id="Dyc-Eg-Fs0"/>
                                                     </connections>
@@ -558,12 +566,14 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open in Default Browser" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcq-dD-Aiv">
                                                     <rect key="frame" x="16" y="13.5" width="157" height="17"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="openInDefaultBrowserLabel"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g4G-LF-pRI">
                                                     <rect key="frame" x="279" y="6.5" width="51" height="31"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="openInDefaultBrowserSwitch"/>
                                                     <connections>
                                                         <action selector="openInDefaultBrowserValueChanged:" destination="uZL-eS-tCe" eventType="valueChanged" id="FwL-Rv-ceU"/>
                                                     </connections>
@@ -587,12 +597,14 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Safari in Reader Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlj-6e-BYP">
                                                     <rect key="frame" x="16" y="13.5" width="181" height="17"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="safariReaderModeLabel"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cmY-8P-GUK">
                                                     <rect key="frame" x="279" y="6.5" width="51" height="31"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="safariReaderModeSwitch"/>
                                                     <connections>
                                                         <action selector="safariReaderModelValueChanged:" destination="uZL-eS-tCe" eventType="valueChanged" id="3vO-T8-iCV"/>
                                                     </connections>

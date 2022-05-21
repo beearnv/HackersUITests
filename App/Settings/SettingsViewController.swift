@@ -46,11 +46,13 @@ class SettingsViewController: UITableViewController {
         } else {
             usernameLabel.text = "Not logged in"
         }
+        usernameLabel.accessibilityIdentifier = "usernameLabel"
     }
 
     private func updateVersion() {
         if let appVersion = appVersion() {
             self.versionLabel.text = "Version \(appVersion)"
+            self.versionLabel.accessibilityIdentifier = "versionLabel"
         }
     }
 
