@@ -15,8 +15,10 @@ target 'Hackers' do
   pod 'Nuke'
   
   pod 'SwiftLint'
+  pod 'SBTUITestTunnelServer'
 end
 
 target 'HackersUITests' do
   pod 'DeviceKit'
+  pod 'SBTUITestTunnelClient'
 end

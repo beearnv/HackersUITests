@@ -75,9 +75,9 @@ struct LoginView: View {
                     HStack {
                         Text("Register on Hacker News")
                         Image(systemName: "rectangle.portrait.and.arrow.right")
+                            .accessibilityIdentifier("registerButton")
                     }
                     .padding()
-                    .accessibilityIdentifier("registerButton")
                 }
             }
             .toolbar {

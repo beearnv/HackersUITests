@@ -10,6 +10,8 @@ import UIKit
 import SwinjectStoryboard
 import Nuke
 
+import SBTUITestTunnelServer
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
@@ -23,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if ProcessInfo.processInfo.arguments.contains("skipAnimations") {
             UIView.setAnimationsEnabled(false)
         }
+        SBTUITestTunnelServer.takeOff()
 
         // setup window and entry point
         window = UIWindow()
@@ -61,19 +64,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // handle incoming links to open post
         let bundleIdentifier = String(Bundle.main.bundleIdentifier!)
         if let scheme = url.scheme,
-            scheme.localizedCaseInsensitiveCompare(bundleIdentifier) == .orderedSame,
-            let view = url.host {
+           scheme.localizedCaseInsensitiveCompare(bundleIdentifier) == .orderedSame,
+           let view = url.host {
             let parameters = parseParameters(from: url)
 
             switch view {
             case "item":
                 if let idString = parameters["id"],
-                    let id = Int(idString) {
+                   let id = Int(idString) {
                     navigationService?.showPost(id: id)
                 }
             default: break
             }
         }
+
         return true
     }
 

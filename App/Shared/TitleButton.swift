@@ -54,6 +54,7 @@ class TitleButton: UIButton {
                 handler: handleAction(sender:)
             )
             action.image = UIImage(systemName: postType.iconName)
+            action.accessibilityIdentifier = "\(postType.title)Button"
             return action
         }
 

@@ -127,15 +127,19 @@ class CommentsViewController: UITableViewController {
             title: "Article Link", style: .default) { _ in
                 self.showShareSheet(url: post.url, sender: sender)
         }
+        postLinkAction.accessibilityIdentifier = "articleLinkButton"
         alertController.addAction(postLinkAction)
 
         let hackerNewsLinkAction = UIAlertAction(
             title: "Hacker News Link", style: .default) { _ in
                 self.showShareSheet(url: post.hackerNewsURL, sender: sender)
         }
+        hackerNewsLinkAction.accessibilityIdentifier = "hackersLinkButton"
         alertController.addAction(hackerNewsLinkAction)
 
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        cancelAction.accessibilityIdentifier = "cancelButton"
+        alertController.addAction(cancelAction)
 
         present(alertController, animated: true)
     }
