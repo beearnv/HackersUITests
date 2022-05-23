@@ -25,3 +25,11 @@ extension XCUIElement {
                       + " Result: <\(result)>")
     }
 }
+
+extension XCUIElementQuery {
+
+    // MARK: - Internal Properties
+
+    var lastMatch: XCUIElement { return self.element(boundBy: self.count - 1) }
+
+}

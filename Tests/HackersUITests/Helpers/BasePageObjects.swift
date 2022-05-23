@@ -25,10 +25,3 @@ class BasePageObjects {
 
 }
 
-extension XCUIElementQuery {
-
-    // MARK: - Public Properties
-
-    public var lastMatch: XCUIElement { return self.element(boundBy: self.count - 1) }
-
-}

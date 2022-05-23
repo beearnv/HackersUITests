@@ -55,7 +55,10 @@ class SettingsUITests: BaseTestCase {
 
         settingsPage.loginTitle.waitIsVisible()
         settingsPage.trustTitle.waitIsVisible()
+        settingsPage.usernameField.tap()
         settingsPage.usernameField.typeText("uiTests")
+        dismissKeyboardIfPresent()
+        settingsPage.passwordField.tap()
         settingsPage.passwordField.typeText("2Ew9z6bq")
         settingsPage.loginButton.tap()
         // TODO: Авторизация не работает
@@ -74,6 +77,6 @@ class SettingsUITests: BaseTestCase {
 
         settingsPage.loginTitle.waitIsVisible()
         settingsPage.registerButton.tap()
-        SafariPage().urlButton.waitIsVisible()
+        SafariPage().webView.waitIsVisible()
     }
 }

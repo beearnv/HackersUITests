@@ -37,7 +37,7 @@ class SettingsPage: BasePageObjects {
     lazy var loginTitle = app.staticTexts["loginTitle"]
     lazy var trustTitle = app.staticTexts["trustTitle"]
     lazy var usernameField = app.textFields["usernameField"]
-    lazy var passwordField = app.textFields["passwordField"]
+    lazy var passwordField = app.secureTextFields["passwordField"]
     lazy var loginButton = app.buttons["loginButton"]
     lazy var registerButton = app.buttons["registerButton"]
 

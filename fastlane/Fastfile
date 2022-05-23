@@ -16,11 +16,25 @@ platform :ios do
 
   desc "Run Tests"
   lane :test do
-    reset_simulator_contents
+    sh("xcrun simctl create TestiPhone com.apple.CoreSimulator.SimDeviceType.iPhone-11 com.apple.CoreSimulator.SimRuntime.iOS-15-4")
     scan(
       scheme: "HackersUITests",
-      derived_data_path: "scan_derived_data" # https://github.com/fastlane/fastlane/issues/15768
-    )
+      derived_data_path: "TestsData/DerivedData/",
+      output_directory: "test_output/",
+      result_bundle: true
+      )
+    sh("xcrun simctl delete TestiPhone")
+    sh("./xcresults export ../test_output/HackersUITests.xcresult ../test_output/json")
+    sh("python3 ./parser.py")
+  end
+
+  desc "Run Tests with error"
+  error do |lane, exception, options|
+  	if lane == :test
+  		sh("xcrun simctl delete TestiPhone")
+  		sh("./xcresults export ../test_output/HackersUITests.xcresult ../test_output/json")
+    	sh("python3 ./parser.py")
+  	end
   end
 
   desc "Build"

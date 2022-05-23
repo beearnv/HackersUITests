@@ -9,10 +9,16 @@
 import XCTest
 
 class TestObserver: NSObject, XCTestObservation {
+
+    // MARK: - Init
+
     override init() {
         super.init()
         XCTestObservationCenter.shared.addTestObserver(self)
     }
+
+    // MARK: - Internal Methods
+
     func testBundleWillStart(_ testBundle: Bundle) {
         let image = UIImage(named: "testImage",
                             in: Bundle(for: type(of: self)),
@@ -23,7 +29,7 @@ class TestObserver: NSObject, XCTestObservation {
         closeAlertIfExists()
     }
 
-    func closeAlertIfExists() {
+    private func closeAlertIfExists() {
         let springboardAlertOkButton = XCUIApplication(bundleIdentifier: "com.apple.springboard")
             .alerts.buttons.firstMatch
 

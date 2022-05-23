@@ -35,4 +35,10 @@ class BaseTestCase: XCTestCase {
                          response: responseFile)
     }
 
+    func dismissKeyboardIfPresent() {
+        if app.keyboards.element(boundBy: 0).exists {
+            app.keyboards.buttons.lastMatch.tap()
+        }
+    }
+
 }

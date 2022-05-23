@@ -19,7 +19,7 @@ class SafariPage {
     lazy var imbeddedBrowserBackButton = app.otherElements["TopBrowserBar"].buttons.element(boundBy: 0)
     lazy var imbeddedBrowserUrl = app.buttons["URL"]
 
-    lazy var urlButton = safariApp.buttons["URL"].firstMatch
+    lazy var webView = safariApp.webViews["WebView"].firstMatch
 
     // MARK: - Init
 
