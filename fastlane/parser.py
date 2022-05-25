@@ -11,5 +11,5 @@ for file in os.listdir(path):
             testResult.append(dictData['name'][:-2] + ":" + dictData['status'])
 
 with open('../test_output/parse_result.txt', 'w') as file:
-     file.write("\n".join(str(item) for item in testResult))
+    file.write("\n".join(str(item) for item in testResult))
 

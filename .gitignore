@@ -9,8 +9,7 @@
 #           - Also handy if you have a large number of dependant pods
 #           - AS PER https://guides.cocoapods.org/using/using-cocoapods.html NEVER IGNORE THE LOCK FILE
 Pods/
-test_output/
-TestsData/
+
 ### fastlane ###
 # fastlane - A streamlined workflow tool for Cocoa deployment
 #
@@ -152,4 +151,6 @@ iOSInjectionProject/
 # End of https://www.gitignore.io/api/macos,swift,xcode,fastlane,cocoapods
 scan_derived_data
 Podfile.lock
-Podfile.lock
+test_output/
+TestsData/
+fastlane/xcresults

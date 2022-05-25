@@ -1,4 +1,8 @@
+require 'simctl'
 default_platform(:ios)
+
+runtime = SimCtl.runtime(name: "iOS 15.5")
+devicetype = SimCtl.devicetype(name: "iPhone 11")
 
 platform :ios do
   desc "Generate new screenshots"
@@ -16,14 +20,15 @@ platform :ios do
 
   desc "Run Tests"
   lane :test do
-    sh("xcrun simctl create TestiPhone com.apple.CoreSimulator.SimDeviceType.iPhone-11 com.apple.CoreSimulator.SimRuntime.iOS-15-4")
+    @device = SimCtl.create_device 'TestiPhone', devicetype, runtime
     scan(
       scheme: "HackersUITests",
+      device: "TestiPhone",
       derived_data_path: "TestsData/DerivedData/",
       output_directory: "test_output/",
       result_bundle: true
-      )
-    sh("xcrun simctl delete TestiPhone")
+    )
+    device.delete
     sh("./xcresults export ../test_output/HackersUITests.xcresult ../test_output/json")
     sh("python3 ./parser.py")
   end
@@ -31,7 +36,7 @@ platform :ios do
   desc "Run Tests with error"
   error do |lane, exception, options|
   	if lane == :test
-  		sh("xcrun simctl delete TestiPhone")
+      @device.delete
   		sh("./xcresults export ../test_output/HackersUITests.xcresult ../test_output/json")
     	sh("python3 ./parser.py")
   	end
